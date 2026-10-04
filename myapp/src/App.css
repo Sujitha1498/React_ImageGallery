@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: white;
+}
+
+.header {
+  height: 80px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #292929;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: #999;
+}
+
+.header nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header nav a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.header nav a:hover {
+  color: white;
+}
+
+.gallery-section {
+  max-width: 1250px;
+  margin: auto;
+  padding: 80px 25px;
+}
+
+.gallery-intro {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+.small-title {
+  color: #999;
+  font-size: 12px;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.gallery-intro h1 {
+  font-size: 55px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.intro-text {
+  color: #999;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  background: transparent;
+  border: 1px solid #444;
+  color: #999;
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.category-buttons button:hover {
+  border-color: white;
+  color: white;
+}
+
+.category-buttons button.active {
+  background: white;
+  color: #111;
+  border-color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.image-card {
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  background: #222;
+  cursor: pointer;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 50%;
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.card-content {
+  transform: translateY(10px);
+  transition: 0.4s;
+}
+
+.image-card:hover .card-content {
+  transform: translateY(0);
+}
+
+.card-content span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.card-content h2 {
+  font-size: 25px;
+  margin: 8px 0;
+  font-weight: 500;
+}
+
+.card-content p {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.footer {
+  border-top: 1px solid #292929;
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 30px;
+}
+
+.footer h2 {
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  color: #888;
+  font-size: 14px;
+}
+
+.footer .copyright {
+  margin-top: 25px;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-intro h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .header nav {
+    gap: 15px;
+  }
+
+  .header nav a {
+    font-size: 12px;
+  }
+
+  .gallery-section {
+    padding: 55px 15px;
+  }
+
+  .gallery-intro h1 {
+    font-size: 36px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card {
+    height: 380px;
+  }
+}
